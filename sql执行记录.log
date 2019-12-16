@@ -1,0 +1,8 @@
+UPDATE `borrower`
+SET
+`merchant_id` = 4,
+`white_list_id` = 5031,
+`name` = '哇哈哈',
+`id_card` = '500117197409057575',
+WHERE
+	`id` = 1;
