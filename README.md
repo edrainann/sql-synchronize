@@ -1,7 +1,7 @@
 ### 1、功能
 
 这是一个多环境时，SQL同步小工具。为了保证各个测试环境的稳定性，解决执行同一条SQL语句时，需要到各个测试环境都执行的琐碎操作。
-
+![image.png](https://upload-images.jianshu.io/upload_images/1683050-1eeb8ecc3a327a5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ------
 
 ### 2、文件路径
@@ -12,16 +12,18 @@ graphic_display.py: 执行同步各环境的SQL的GUI
 server_info: 本地的配置文件，需要通过此文件连接服务器。
 iniconfig.ini: 从服务器拉取的配置文件。
 sql执行记录：通过该小应用执行的SQL记录。
+output文件夹：打包的.exe文件
 
 ------
 
 ### 3、需要模块
 
+执行：python -m pip install -r requirements.txt
+
 paramiko
-
 tkinter
-
 pymysql
+auto-py-to-exe
 
 ---
 ### 4、用到知识
@@ -52,8 +54,17 @@ Toplevel：一个容器窗口部件，作为一个单独的、最上面的窗口
 messageBox：消息框，用于显示你应用程序的消息框。(Python2中为tkMessagebox)
 注意在Tkinter中窗口部件类没有分级；所有的窗口部件类在树中都是兄弟关系。
 
+3）参考连接：https://github.com/brentvollebregt/auto-py-to-exe
+下载auto-py-to-exe库，可以将.py文件转换成.exe文件。界面上其实是通过各种按钮来添加一些指令，这些指令完全是基于pyinstaller的。
+通过在命令行执行```auto-py-to-exe```启动界面，如下图
+![image.png](https://upload-images.jianshu.io/upload_images/1683050-707e63c57f7b0513.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+4)参考连接：https://zhuanlan.zhihu.com/p/57839415
+使用pipreqs生成requirements.txt
+pipreqs ./ --encoding=utf-8 --force
+
 ---
-### 4、出现问题：
+### 5、出现问题：
 
 Q1、paramiko使用出现CryptographyDeprecationWarning: encode_point has been deprecated on  EllipticCurvePublicNumbers and will be removed in a future version.
 A1:

@@ -1,0 +1,4 @@
+PyMySQL==0.9.3
+paramiko==2.4.2
+cryptography==2.4.2
+auto-py-to-exe==2.6.6
